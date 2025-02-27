@@ -70,7 +70,6 @@ const hasAccess = false;
 console.log(Number(hasAccess));
 
 // Convert the following empty string to a number and log the result:
-
 const emptyText = "";
 console.log(Number(emptyText));
 
