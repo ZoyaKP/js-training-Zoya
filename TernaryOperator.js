@@ -18,7 +18,7 @@ number % 2 === 0 ? console.log("Even number") : console.log("Odd number");
 // Write two programs one using the conditional branching if
 // Another using the ternary operator (?)
 // Write your code here
-let examScore = 90; 
+let examScore = 90;
 if (examScore < 0 || examScore > 100) {
   console.log("Invalid exam score");
 } else {
@@ -29,4 +29,19 @@ if (examScore < 0 || examScore > 100) {
   }
 }
 
-examScore >= 50 && examScore <= 100 ? console.log("Pass") : examScore < 50 && examScore >= 0 ? console.log("Fail") : console.log ("Invalid exam score");
+examScore >= 50 && examScore <= 100
+  ? console.log("Pass")
+  : examScore < 50 && examScore >= 0
+  ? console.log("Fail")
+  : console.log("Invalid exam score");
+
+// Zoya jan your code is correct here
+// It covers the task requirements
+// But you could write it shorter
+console.log(
+  score < 0 || score > 100
+    ? "Invalid score. Please enter a value between 0 and 100."
+    : score >= 50
+    ? "Pass"
+    : "Fail"
+);
