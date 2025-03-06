@@ -20,7 +20,8 @@ const { userInput } = require("./UserInput");
 let firstNumber = +userInput("Please provide first number ");
 let operator = userInput("Please provide operator ");
 let secondNumber = +userInput("Please provide second number ");
-
+// The variable result is used without being declared (should use let result before assigning values).
+// let result
 switch(operator) {
   case '+':
     result = (firstNumber + secondNumber);
