@@ -1,4 +1,4 @@
-const { userInput } = require("./UserInput");
+const { userInput } = require("../Homework 2/UserInput");
 // Task 1: Basic Calculator
 // Objective:
 // Create a simple calculator that takes two numbers and an operator (+, -, *, /) as input, then performs the corresponding mathematical operation using a switch statement.
