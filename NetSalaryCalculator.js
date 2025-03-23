@@ -47,33 +47,29 @@ function salaryCalculator(grossSalary) {
    
   //Social security calc
   if (grossSalary <= 500000) {
-  socialSecurity = (grossSalary * 0.05);//5000
-   } else if (grossSalary >= 501000 && grossSalary <= 1125000) {
-    socialSecurity= (grossSalary * 0.10) - 2500;
-   }
-    else {
-      socialSecurity = (1125000 * 0.10) - 25000;
-    };
-    //Stamp duty calc
+    socialSecurity = (grossSalary * 0.05);
+  } else if (grossSalary >= 501000 && grossSalary <= 1125000) {
+    socialSecurity= (grossSalary * 0.10) - 25000;
+  } else {
+    socialSecurity = Math.min(((1125000 * 0.10) - 25000), 87500);
+  };
+  
+  //Stamp duty calc
   if (grossSalary <= 100000) {
-    stampDuty = 1500;//98500
+    stampDuty = 1500;
+  } else if (grossSalary >= 100001 && grossSalary <= 200000) {
+    stampDuty = 3000;
+  } else if (grossSalary >= 200001 && grossSalary <= 500000) {
+    stampDuty = 5500;
+  } else if (grossSalary >= 500001 && grossSalary <= 1000000) {
+    stampDuty = 8500;
+  } else {
+    stampDuty = 15000;
   }
-    else if (grossSalary >= 100001 && grossSalary <= 200000){
-      stampDuty = 3000;
-    }
-    else if (grossSalary >= 200001 && grossSalary <= 500000){
-      stampDuty = 5500;
-    }
-    else if (grossSalary >= 500001 && grossSalary <= 1000000){
-      stampDuty = 8500;
-    }
-    else {
-      stampDuty = 15000;
-    }
-    let netSalary = grossSalary - incomeTax - socialSecurity - stampDuty;
+  let netSalary = grossSalary - incomeTax - socialSecurity - stampDuty;
   //Rounding
   netSalary = parseFloat(netSalary.toFixed(1));
-    return netSalary;
+  return netSalary;
 }
 //Checking with different numbers
 console.log(salaryCalculator(0));
