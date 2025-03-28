@@ -42,3 +42,17 @@ credentialsCheck('Zoya', 'password123', function(message) {
 // and calculates the sum of numbers from 1 to n using a for loop.
 // After the calculation, call the callback function with the result.
 // Write your code here
+
+// Zoya jan you are missing the code for the third task
+// The solution should be 
+function sumNumbersUpTo(n, callback) {
+  let result = 0;
+  for (let i = 1; i <= n; i++) {
+    result += i;
+  }
+  callback(result);
+}
+
+sumNumbersUpTo(5, function(sum) {
+  console.log('Sum of numbers is:', sum);  // Outputs: Sum of numbers is: 15
+});
