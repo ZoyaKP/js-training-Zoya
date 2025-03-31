@@ -18,9 +18,12 @@ console.log(calculateStringLength('Zoya'));
 function printStringCharacter(lastName) {
   if (typeof lastName !== 'string') {
     console.log('Invalid input');
+    return; // A return statement is needed here to stop the function execution if the validation fails.
+ 
   }
   if (lastName.length < 1 || lastName.length > 50) {
     console.log('Invalid character count');
+    return; // A return statement is needed here to stop the function execution if the validation fails.
   }
  for (let i = 0; i < lastName.length; i++) {
   console.log(lastName[i]);
@@ -40,6 +43,7 @@ printStringCharacter('');
 function capitalizeNameSurname (fullName) {
   if (typeof fullName !== 'string') {
   console.log('Invalid input');
+    return; // A return statement is needed here to stop the function execution if the validation fails.
   };
   const spaceIndex = fullName.indexOf(' ');
   if (spaceIndex == -1){
@@ -68,9 +72,10 @@ capitalizeNameSurname('zoya karapetyan');
 // Write your code here!
 
 function alternateCase (color) {
-  if (color.length < 10 || color.length > 20)
+  if (color.length < 10 || color.length > 20){
     console.log('Invalid character count');
-
+    return; // A return statement is needed here to stop the function execution if the validation fails.
+  }
   let result = '';
   for (let i = 0; i < color.length; i++) {
     if (i % 2 === 0) {
