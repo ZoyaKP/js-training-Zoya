@@ -9,7 +9,11 @@
 
 
 const forbiddenWord = 'black';
+// The for loop is unnecessary. You're checking the same condition repeatedly for no reason — text.toLowerCase().includes(...)
+// already returns a boolean and doesn't need a loop.
+// You're not using the i variable at all.
 
+It technically works, but not as intended in clean coding terms.
 function containsForbiddenWord(text, forbiddenWord) {
   for (i = 0; i < text.length; i++) {
     if (text.toLowerCase().includes(forbiddenWord.toLowerCase())) {
