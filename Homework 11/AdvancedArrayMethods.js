@@ -8,7 +8,7 @@
 
 function customForEach(array, callback) {
 
-  for (i = 0; i < array.length; i ++) {
+  for (i = 0; i < array.length; i ++) { //  i is undeclared. Use let i = 0
     callback(array[i], i, array)
   }
 }
@@ -24,7 +24,7 @@ function customForEach(array, callback) {
 
 function customMap(array, callback) {
   let newArray = [];
-  for (i = 0; i < array.length; i++) {
+  for (i = 0; i < array.length; i++) {  //i is undeclared. Use let i = 0
    let result = callback(array[i]);
    newArray.push(result);
   }
@@ -41,7 +41,7 @@ console.log(customMap(['banana', 'apple', 'orange'], (item) => item.length));
 
 function customReverse(array) {
   let arrayReverse = [];
-  for (i = array.length - 1; i >= 0; i --){
+  for (i = array.length - 1; i >= 0; i --){  // again i is undeclared. Use let i = 0
     arrayReverse.push(array[i]);
   }
   return arrayReverse;
@@ -57,8 +57,8 @@ console.log(customReverse([1, 2, 3, 4]));
 // [4. 9. 1, 5]  [9,4,5]
 function bubbleSort(array) {
   let bubbleArray =  [...array];
-  for (i = 0; i < bubbleArray.length - 1; i++){
-    for (j = 0; j < bubbleArray.length - 1 - i; j++) {
+  for (i = 0; i < bubbleArray.length - 1; i++){  // again i is undeclared. Use let i = 0
+    for (j = 0; j < bubbleArray.length - 1 - i; j++) {  // again j is undeclared. Use let i = 0
       if (bubbleArray[j] > bubbleArray[j + 1]) {
         let arrayTmp = bubbleArray[j];
         bubbleArray[j] = bubbleArray[j + 1];
@@ -96,7 +96,7 @@ function customReduce(array, callback, initialValue) {
       startingIndex = 1;
       accumulator = array[0];
     }
-    for (let i  = startingIndex; i < array.length; i++) {
+    for (let i  = startingIndex; i < array.length; i++) {  // again i is undeclared. Use let i = 0
       accumulator = callback(accumulator, array[i], i , array);
     }
     return accumulator;
