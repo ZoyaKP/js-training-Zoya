@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "types": ["cypress", "jest"], // 👈 THIS IS CRITICAL
+    "target": "ES6",
+    "lib": ["ES6", "DOM"],
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["./cypress/e2e/**/*.ts"]
+}

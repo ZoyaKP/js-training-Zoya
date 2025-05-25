@@ -11,13 +11,11 @@
 const forbiddenWord = 'black';
 
 function containsForbiddenWord(text, forbiddenWord) {
-  for (i = 0; i < text.length; i++) {
-    if (text.toLowerCase().includes(forbiddenWord.toLowerCase())) {
+  if (text.toLowerCase().includes(forbiddenWord.toLowerCase())) {
     return true;
-    }
   }
-      return false;
-    }
+  return false;
+}  
   console.log(containsForbiddenWord('Man', forbiddenWord));
   console.log(containsForbiddenWord('Black Man', forbiddenWord));
 

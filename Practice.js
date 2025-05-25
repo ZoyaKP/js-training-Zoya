@@ -1,47 +1,45 @@
-//let planet = 'Mars';
-//let welcomeMessage = 'Welcome to ' + planet + '!';
-//console.log(welcomeMessage);  // Prints: "Welcome to Mars!"
-
-
-/*
- * Task: Comment Validation
- * Implement a function called validateComment(comment)
- * that checks whether a given comment contains any harassing or
- * offensive words from a predefined list.
- * The function should ensure input validation and detect harmful words using a simple for loop.
- *
- * 📋 **Requirements:**
- *
- * 1. The function must accept a single argument, comment.
- * 2. If the input is not a string, return the message:
- *    "Invalid input: Comment must be a string."
- * 3. The function should check whether comment contains any word from a predefined
- *    list of harassment-related words:
- *    ["idiot", "loser", "moron", "stupid", "dumb", "fool", "bully", "creep"]
- * 4. The check must be case-insensitive, meaning "Idiot" and "idiot" should be treated the same.
- * 5. Use a simple for loop for iteration (do not use array methods like .some(), .filter(), or .find()).
- *
- * ⚠️ If the comment contains any harassing word, return the message:
- *    "This comment can't be posted as it contains the word: '<bad word>'"
- *    The message should include the first detected harassing word.
- * 6. If the comment does not contain any offensive words, return the original comment prefixed with:
- *    "Comment posted successfully! " + comment
- */
-function validateComment(comment) {
-
-  const harrassingWords = ["idiot", "loser", "moron", "stupid", "dumb", "fool", "bully", "creep"];
-
-  if (typeof comment !== 'string') {
-    console.log('Invalid input: Comment must be a string');
-  };
-    for (i = 0; i < harrassingWords.length; i++) {
-    if (comment.includes(harrassingWords[i].toLowerCase)) {
-      console.log(`This comment can't be posted as it contains the word: ${harrassingWords[0]}`)
-    } else
-    {
-      console.log('Comment posted successfully' + comment);
-    }  
+class Person {
+  constructor(name) {
+    this._name = name;  // Internal field (with underscore) to store the name
   }
-  
-  console.log(validateComment(moron));
+  getName()
+  {
+    return this._name.toUpperCase();
+  }
+   get name() {
+    return this._name.toUpperCase();  // Get the name and return it in uppercase
+  }
+  set name(value) {
+    if (value.length < 2) {  // Validation: ensure the name is at least 2 characters
+      console.log("Name is too short.");
+      return;
+    }
+    this._name = value;  // Set the name if it's valid
+  }
 }
+let Zoya = new Person('Zoya');
+Zoya.getName();
+console.log(Zoya.getName());
+
+
+// 💡 Example Usage:
+const emp = new Employee(
+  "bob",
+  "henderson",
+  "  Bob.Henderson@email.com ",
+  "098666666",
+  "QA Automation Engineer",
+  780000,
+  true
+);
+
+console.log(emp.info);
+// Employee information: Bob Henderson is a QA Automation Engineer. He works remotely./He works on-site. (if isRemote = false)
+// His salary is 780000 AMD. Phone number: 098666666.
+// Email: bob.henderson@email.com
+
+emp.raiseSalary(10);
+emp.giveRaise(30000);
+emp.changePosition("Senior QA Automation Engineer");
+console.log(emp.info);
+// Updated info reflecting new salary and position
