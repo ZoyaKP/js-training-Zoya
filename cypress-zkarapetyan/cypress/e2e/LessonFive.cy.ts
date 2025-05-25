@@ -90,11 +90,8 @@ cy.get('div.rc-dropdown:not([aria-hidden="true"])')
   .type(`${collectionName}`);
   cy.get('p[data-tooltip-content="Create"]').click();
   cy.contains(collectionName).should('be.visible');
+  cy.wait(1000); 
 
-  // Wait a bit to allow any re-rendering (not ideal, but sometimes needed)
-  cy.wait(1000); // <-- if the page visibly changes, add this
-  
-  // Then query fresh
   cy.xpath(`//p[text()="${collectionName}"]`)
     .parentsUntil('[class*="CollectionCard"]')
     .parent()
@@ -109,15 +106,3 @@ cy.get('div.rc-dropdown:not([aria-hidden="true"])')
   });
 });
 
-
-
-
-
-// ✅ Third it block:
-// - Go to the **My Workspace → Collections** section.
-// - **Create a collection**:
-//   - Verify the collection appears in the collections list with the correct name.
-// - **Edit the collection name**:
-//   - Verify the collection name is updated in the list.
-// - **Delete the collection**:
-//   - Verify the collection is removed from the DOM and no longer exists.
